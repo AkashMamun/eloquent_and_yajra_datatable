@@ -19,4 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/employee','EmployeeController@index');
-Route::get('student','StudentController@index');
+Route::get('/student','StudentController@index');
+Route::get('/add-post','PostController@addPost');
+Route::post('/add-post','PostController@createPost')->name('post.add');
+Route::get('/all-post','PostController@getPosts')->name('post.all');
+Route::get('/delete-post/{id}','PostController@deletePost')->name('post.delete');
+Route::get('/update-post','PostController@updatePost')->name('post.update');
+Route::get('/edit-post/{id}','PostController@updateForm')->name('post.edit');
